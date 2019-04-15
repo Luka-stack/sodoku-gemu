@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.cpp
+iostream
+-
+algorithm
+-
+fstream
+-
+random
+-
+chrono
+-
+SodokuBoard.h
+/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
+
+/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
+string
+-
+vector
+-
+
