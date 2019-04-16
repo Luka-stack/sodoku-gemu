@@ -211,7 +211,7 @@ int SodokuBoard::get_difficulty_level()
     std::default_random_engine e(seed);
 
     do {
-        std::cout << "\n\n\t Which Sodoku you want to solve?:\n";
+        std::cout << "\n\n\t Which Sodoku you want to generate?:\n";
         std::cout << "\t\t1.Easy\t2.Medium\t3.Hard\t4.Random\n";
         std::cout << "\t\t >>>";
         std::cin >> level;
@@ -237,4 +237,43 @@ int SodokuBoard::get_difficulty_level()
         std::uniform_int_distribution<std::mt19937::result_type> dist6(22,60);
         return dist6(e);
     }
+}
+
+void SodokuBoard::colmun_help(int col)
+{
+    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    col_remove_option(options, col);
+
+    std::cout << "Your Possibilities are: ";
+    for (int opt : options)
+        std::cout << opt << ", ";
+}
+
+void SodokuBoard::row_help(int row)
+{
+    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    row_remove_option(options, row);
+
+    std::cout << "Your Possibilities are: ";
+    for (int opt : options)
+        std::cout << opt << ", ";
+}
+
+void SodokuBoard::box_help(int row, int col)
+{
+    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    box_remove_option(options, row, col);
+
+    std::cout << "Your Possibilities are: ";
+    for (int opt : options)
+        std::cout << opt << ", ";
+}
+
+void SodokuBoard::possibilities(int row, int col)
+{
+    std::vector<int> options = get_tile_options(row, col);
+
+    std::cout << "Your Possibilities are: ";
+    for (int opt : options)
+        std::cout << opt << ", ";
 }
