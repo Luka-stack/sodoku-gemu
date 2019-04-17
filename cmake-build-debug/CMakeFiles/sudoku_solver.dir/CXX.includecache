@@ -6,29 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.cpp
-iostream
--
-algorithm
--
-fstream
--
-random
--
-chrono
--
-SodokuBoard.h
-/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
-
 /home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
 string
 -
 vector
 -
-
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.cpp
-SodokuSolver.h
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h
 
 /home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h
 SodokuBoard.h

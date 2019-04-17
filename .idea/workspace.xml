@@ -12,15 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b1594fe-831b-41d7-a1a4-068c82c79deb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/new_feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SodokuBoard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SodokuBoard.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SodokuBoard.h" beforeDir="false" afterPath="$PROJECT_DIR$/SodokuBoard.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/SodokuBoard.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/SodokuBoard.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sudoku_solver.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sudoku_solver" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sudoku_solver" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,24 +28,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="141" column="66" lean-forward="true" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
+            <state relative-caret-position="306">
+              <caret line="144" column="36" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#476#1788#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SodokuBoard.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="273" column="58" lean-forward="true" selection-start-line="273" selection-start-column="58" selection-end-line="273" selection-end-column="58" />
+            <state relative-caret-position="394">
+              <caret line="263" column="59" lean-forward="true" selection-start-line="263" selection-start-column="59" selection-end-line="263" selection-end-column="59" />
               <folding>
                 <element signature="e#43#62#0" expanded="true" />
                 <element signature="e#165#273#0" />
@@ -70,8 +61,9 @@
                 <element signature="e#2836#3268#0" />
                 <element signature="e#3270#3958#0" />
                 <element signature="e#3960#4710#0" />
-                <element signature="e#4712#5673#0" />
-                <element signature="e#5678#5717#0" />
+                <element signature="e#4712#5676#0" />
+                <element signature="e#5678#5925#0" />
+                <element signature="e#5927#6171#0" />
               </folding>
             </state>
           </provider>
@@ -80,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SodokuBoard.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="360">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
                 <element signature="e#116#133#0" expanded="true" />
               </folding>
@@ -112,9 +104,9 @@
         <option value="$PROJECT_DIR$/SodokuSolver.cpp" />
         <option value="$PROJECT_DIR$/new_feature" />
         <option value="$PROJECT_DIR$/SodokuBoard.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/SodokuBoard.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -135,7 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,6 +138,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,12 +182,14 @@
       <workItem from="1554819090742" duration="12241000" />
       <workItem from="1554880511315" duration="2921000" />
       <workItem from="1555326131328" duration="19191000" />
-      <workItem from="1555432531722" duration="8506000" />
+      <workItem from="1555432531722" duration="8579000" />
+      <workItem from="1555485534636" duration="1628000" />
+      <workItem from="1555489655451" duration="455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56778000" />
+    <option name="totallyTimeSpent" value="58934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -210,7 +204,7 @@
     <frame x="0" y="-2" width="1366" height="770" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.20681818" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2128788" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -314,29 +308,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SodokuBoard.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="360">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="e#116#133#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="141" column="66" lean-forward="true" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#476#1788#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SodokuBoard.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="273" column="58" lean-forward="true" selection-start-line="273" selection-start-column="58" selection-end-line="273" selection-end-column="58" />
+        <state relative-caret-position="394">
+          <caret line="263" column="59" lean-forward="true" selection-start-line="263" selection-start-column="59" selection-end-line="263" selection-end-column="59" />
           <folding>
             <element signature="e#43#62#0" expanded="true" />
             <element signature="e#165#273#0" />
@@ -353,8 +336,19 @@
             <element signature="e#2836#3268#0" />
             <element signature="e#3270#3958#0" />
             <element signature="e#3960#4710#0" />
-            <element signature="e#4712#5673#0" />
-            <element signature="e#5678#5717#0" />
+            <element signature="e#4712#5676#0" />
+            <element signature="e#5678#5925#0" />
+            <element signature="e#5927#6171#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="144" column="36" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

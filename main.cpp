@@ -141,8 +141,8 @@ void play_menu(SodokuBoard& sodoku)
 
                 if (answer == '1') sodoku.possibilities(row, col);
                 else if(answer == '2') sodoku.colmun_help(col);
-                else if(answer == '4') sodoku.row_help(row);
-                else if(answer == '3') sodoku.box_help(row, col);
+                else if(answer == '3') sodoku.row_help(row);
+                else if(answer == '4') sodoku.box_help(row, col);
                 break;
             }
             case '5':
