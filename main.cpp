@@ -15,6 +15,7 @@ void main_menu(SodokuBoard&);
 void play_menu(SodokuBoard&);
 void take_coords(int&, int&);
 //std::pair<int, int> take_coords();
+void print_possibilities(std::vector<int>);
 
 
 int main()
@@ -38,6 +39,7 @@ void main_menu(SodokuBoard& sodoku)
         cout << "\t\t\t 3. Load Sodoku from File" << endl;
         cout << "\t\t\t 4. Deploy Sodoku to File" << endl;
         cout << "\t\t\t 5. Exit" << endl;
+        cout << "\t\t\t >>> ";
 
         char choice;
         cin >> choice;
@@ -54,7 +56,8 @@ void main_menu(SodokuBoard& sodoku)
             case '3':
             {
                 std::string filename;
-                cout << "Filename to Load: ";
+                cout << "Filename to Load:\n";
+                cout << "\t\t\t >>>";
                 cin >> filename;
                 sodoku.load_board(filename);
                 break;
@@ -62,7 +65,8 @@ void main_menu(SodokuBoard& sodoku)
             case '4':
             {
                 std::string filename;
-                cout << "Filename to Deploy: ";
+                cout << "Filename to Deploy:\n";
+                cout << "\t\t\t >>>";
                 cin >> filename;
                 sodoku.deploy_board(filename);
                 break;
@@ -93,6 +97,7 @@ void play_menu(SodokuBoard& sodoku)
         cout << "\t\t\t 4. Get Help" << endl;
         cout << "\t\t\t 5. Check Correctness" << endl;
         cout << "\t\t\t 6. Back To Main Menu" << endl;
+        cout << "\t\t\t >>> ";
 
         char choice;
         cin >> choice;
@@ -104,7 +109,8 @@ void play_menu(SodokuBoard& sodoku)
                 //std::pair<int, int> coords;
                 int number, row, col;
 
-                cout << "What number you want to set up? ";
+                cout << "\n\t\t\tWhat number you want to set up?\n";
+                cout << "\t\t\t >>> ";
                 cin >> number;
                 take_coords(row, col);
 
@@ -116,7 +122,7 @@ void play_menu(SodokuBoard& sodoku)
                 //std::pair<int, int> coords;
                 int row, col;
 
-                cout << "What tile you want to wipe out?\n";
+                cout << "\n\t\t\tWhat tile you want to wipe out?\n";
                 take_coords(row, col);
 
                 sodoku.clear_tile_value(row, col);
@@ -132,17 +138,18 @@ void play_menu(SodokuBoard& sodoku)
                 int row, col;
                 char answer;
 
-                cout << "For What tile you need help?\n";
+                cout << "\n\t\t\tFor What tile you need help?\n";
                 take_coords(row, col);
 
-                cout << "What help you need?\n";
-                cout << "1. Full 2. Column 3. Row 4. Box\n";
+                cout << "\n\t\t\tWhat help you need?\n";
+                cout << "\t\t\t1. Full 2. Column 3. Row 4. Box\n";
+                cout << "\t\t\t >>> ";
                 cin >> answer;
 
-                if (answer == '1') sodoku.possibilities(row, col);
-                else if(answer == '2') sodoku.colmun_help(col);
-                else if(answer == '3') sodoku.row_help(row);
-                else if(answer == '4') sodoku.box_help(row, col);
+                if (answer == '1') print_possibilities(sodoku.possibilities(row, col));
+                else if(answer == '2') print_possibilities(sodoku.colmun_help(col));
+                else if(answer == '3') print_possibilities(sodoku.row_help(row));
+                else if(answer == '4') print_possibilities(sodoku.box_help(row, col));
                 break;
             }
             case '5':
@@ -178,12 +185,22 @@ void play_menu(SodokuBoard& sodoku)
 void take_coords(int& row, int& col)
 {
     do {
-        cout << "Give Row <1 , 9>";
+        cout << "\t\t\tGive Row <1 , 9>\n";
+        cout << "\t\t\t >>>";
         cin >> row;
-        cout << "Give Column <1 , 9>";
+        cout << "\t\t\tGive Column <1 , 9>\n";
+        cout << "\t\t\t >>>";
         cin >> col;
     } while (row < 1 || row > 9 || row < 1 || row > 9);
 
     row -= 1;
     col -= 1;
+}
+
+void print_possibilities(std::vector<int> poss)
+{
+    cout << "\n\t\t\t Your Possibilities < ";
+    for (int n : poss)
+        cout << n << ", ";
+    cout << " >" << endl;
 }

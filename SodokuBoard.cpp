@@ -213,7 +213,7 @@ int SodokuBoard::get_difficulty_level()
     do {
         std::cout << "\n\n\t Which Sodoku you want to generate?:\n";
         std::cout << "\t\t1.Easy\t2.Medium\t3.Hard\t4.Random\n";
-        std::cout << "\t\t >>>";
+        std::cout << "\t\t >>> ";
         std::cin >> level;
     } while(level > 4 || level < 1);
 
@@ -239,41 +239,33 @@ int SodokuBoard::get_difficulty_level()
     }
 }
 
-void SodokuBoard::colmun_help(int col)
+std::vector<int> SodokuBoard::colmun_help(int col)
 {
     std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     col_remove_option(options, col);
 
-    std::cout << "Your Possibilities are: ";
-    for (int opt : options)
-        std::cout << opt << ", ";
+    return options;
 }
 
-void SodokuBoard::row_help(int row)
+std::vector<int> SodokuBoard::row_help(int row)
 {
     std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     row_remove_option(options, row);
 
-    std::cout << "Your Possibilities are: ";
-    for (int opt : options)
-        std::cout << opt << ", ";
+    return options;
 }
 
-void SodokuBoard::box_help(int row, int col)
+std::vector<int> SodokuBoard::box_help(int row, int col)
 {
     std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     box_remove_option(options, row, col);
 
-    std::cout << "Your Possibilities are: ";
-    for (int opt : options)
-        std::cout << opt << ", ";
+    return options;
 }
 
-void SodokuBoard::possibilities(int row, int col)
+std::vector<int> SodokuBoard::possibilities(int row, int col)
 {
     std::vector<int> options = get_tile_options(row, col);
 
-    std::cout << "Your Possibilities are: ";
-    for (int opt : options)
-        std::cout << opt << ", ";
+    return options;
 }
