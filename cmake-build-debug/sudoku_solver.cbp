@@ -90,12 +90,6 @@
 		<Unit filename="/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h">
 			<Option target="sudoku_solver"/>
 		</Unit>
-		<Unit filename="/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.cpp">
-			<Option target="sudoku_solver"/>
-		</Unit>
-		<Unit filename="/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h">
-			<Option target="sudoku_solver"/>
-		</Unit>
 		<Unit filename="/home/takacchi/CLionProjects/soduko_solver/main.cpp">
 			<Option target="sudoku_solver"/>
 		</Unit>

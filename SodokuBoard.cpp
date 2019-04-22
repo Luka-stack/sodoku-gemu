@@ -95,7 +95,7 @@ void SodokuBoard::load_board(const std::string& filename)
     }
 
     in.close();
-    std::cout << "Sodoku was successfully loaded\n";
+    std::cout << "\t\t\tSodoku was successfully loaded\n";
 }
 
 int SodokuBoard::read_value(char ch)
@@ -121,7 +121,7 @@ void SodokuBoard::deploy_board(const std::string& filename)
     }
 
     out.close();
-    std::cout << "Sodoku was successfully deployed\n";
+    std::cout << "\t\t\tSodoku was successfully deployed\n";
 }
 
 bool SodokuBoard::find_solution(int index)
@@ -211,9 +211,9 @@ int SodokuBoard::get_difficulty_level()
     std::default_random_engine e(seed);
 
     do {
-        std::cout << "\n\n\t Which Sodoku you want to solve?:\n";
+        std::cout << "\n\n\t Which Sodoku you want to generate?:\n";
         std::cout << "\t\t1.Easy\t2.Medium\t3.Hard\t4.Random\n";
-        std::cout << "\t\t >>>";
+        std::cout << "\t\t >>> ";
         std::cin >> level;
     } while(level > 4 || level < 1);
 
