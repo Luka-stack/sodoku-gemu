@@ -18,11 +18,10 @@ public:
     explicit SodokuBoard(const int (*)[SIZE]);
     SodokuBoard(const SodokuBoard& sodoku) : SodokuBoard(sodoku.board) {}
 
-    bool correctness();
-    std::vector<int> colmun_help(int);
-    std::vector<int> row_help(int);
-    std::vector<int> box_help(int, int);
-    std::vector<int> possibilities(int, int);
+    std::vector<int> get_tile_options(int, int);
+    void box_remove_option(std::vector<int>&, int, int);
+    void col_remove_option(std::vector<int>&, int);
+    void row_remove_option(std::vector<int>&, int);
 
     void set_tile_value(int, int, int);
     void clear_tile_value(int, int);
@@ -36,11 +35,6 @@ public:
     bool find_solution(int=0);
 
 private:
-
-    std::vector<int> get_tile_options(int, int);
-    void box_remove_option(std::vector<int>&, int, int);
-    void col_remove_option(std::vector<int>&, int);
-    void row_remove_option(std::vector<int>&, int);
 
     int read_value(char);
     bool is_filled(int, int);

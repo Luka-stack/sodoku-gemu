@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <array>
 #include <random>
-#include "SodokuSolver.h"
 #include "SodokuBoard.h"
 
 using std::cout;
@@ -15,7 +14,8 @@ void main_menu(SodokuBoard&);
 void play_menu(SodokuBoard&);
 void take_coords(int&, int&);
 //std::pair<int, int> take_coords();
-void print_possibilities(std::vector<int>);
+void print_possibilities(SodokuBoard&, int, int, int=0);
+
 
 
 int main()
@@ -95,6 +95,7 @@ void play_menu(SodokuBoard& sodoku)
         cout << "\t\t\t 2. Clear Tile" << endl;
         cout << "\t\t\t 3. Solve Sodoku" << endl;
         cout << "\t\t\t 4. Get Help" << endl;
+        //TODO
         cout << "\t\t\t 5. Check Correctness" << endl;
         cout << "\t\t\t 6. Back To Main Menu" << endl;
         cout << "\t\t\t >>> ";
@@ -146,10 +147,10 @@ void play_menu(SodokuBoard& sodoku)
                 cout << "\t\t\t >>> ";
                 cin >> answer;
 
-                if (answer == '1') print_possibilities(sodoku.possibilities(row, col));
-                else if(answer == '2') print_possibilities(sodoku.colmun_help(col));
-                else if(answer == '3') print_possibilities(sodoku.row_help(row));
-                else if(answer == '4') print_possibilities(sodoku.box_help(row, col));
+                if (answer == '1') print_possibilities(sodoku, row, col);
+                else if(answer == '2') print_possibilities(sodoku, row, col);
+                else if(answer == '3') print_possibilities(sodoku, row, col);
+                else if(answer == '4') print_possibilities(sodoku, row, col);
                 break;
             }
             case '5':
@@ -197,10 +198,25 @@ void take_coords(int& row, int& col)
     col -= 1;
 }
 
-void print_possibilities(std::vector<int> poss)
+void print_possibilities(SodokuBoard& board, int row , int col, int ans)
 {
-    cout << "\n\t\t\t Your Possibilities < ";
-    for (int n : poss)
-        cout << n << ", ";
+    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    if (ans == 0)
+    {
+        board.row_remove_option(options, row);
+        board.col_remove_option(options, col);
+        board.box_remove_option(options, row, col);
+    }
+    else if (ans == 1)
+        board.col_remove_option(options, col);
+    else if (ans == 2)
+        board.row_remove_option(options, row);
+    else if (ans == 3)
+        board.box_remove_option(options, row, col);
+
+    cout << "\n\t\t\t Your Possibilities Are < ";
+    for (int pos : options)
+        cout << pos << " ";
     cout << " >" << endl;
 }

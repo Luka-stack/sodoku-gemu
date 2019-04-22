@@ -238,34 +238,3 @@ int SodokuBoard::get_difficulty_level()
         return dist6(e);
     }
 }
-
-std::vector<int> SodokuBoard::colmun_help(int col)
-{
-    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    col_remove_option(options, col);
-
-    return options;
-}
-
-std::vector<int> SodokuBoard::row_help(int row)
-{
-    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    row_remove_option(options, row);
-
-    return options;
-}
-
-std::vector<int> SodokuBoard::box_help(int row, int col)
-{
-    std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    box_remove_option(options, row, col);
-
-    return options;
-}
-
-std::vector<int> SodokuBoard::possibilities(int row, int col)
-{
-    std::vector<int> options = get_tile_options(row, col);
-
-    return options;
-}

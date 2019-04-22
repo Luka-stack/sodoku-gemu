@@ -26,14 +26,6 @@ string
 vector
 -
 
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.cpp
-SodokuSolver.h
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h
-
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h
-SodokuBoard.h
-/home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
-
 /home/takacchi/CLionProjects/soduko_solver/main.cpp
 iostream
 -
@@ -45,8 +37,10 @@ array
 -
 random
 -
-SodokuSolver.h
-/home/takacchi/CLionProjects/soduko_solver/SodokuSolver.h
 SodokuBoard.h
 /home/takacchi/CLionProjects/soduko_solver/SodokuBoard.h
+
+/home/takacchi/CLionProjects/soduko_solver/raw_sodoku.cpp
+iostream
+-
 
