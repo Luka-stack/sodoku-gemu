@@ -14,7 +14,8 @@ void main_menu(SodokuBoard&);
 void play_menu(SodokuBoard&);
 void take_coords(int&, int&);
 //std::pair<int, int> take_coords();
-void print_possibilities(SodokuBoard&, int, int, int=0);
+void print_possibilities(SodokuBoard&, int, int, int=1);
+void check_all_dimensions(SodokuBoard&);
 
 
 
@@ -56,7 +57,7 @@ void main_menu(SodokuBoard& sodoku)
             case '3':
             {
                 std::string filename;
-                cout << "Filename to Load:\n";
+                cout << "\t\t\tFilename to Load:\n";
                 cout << "\t\t\t >>>";
                 cin >> filename;
                 sodoku.load_board(filename);
@@ -65,7 +66,7 @@ void main_menu(SodokuBoard& sodoku)
             case '4':
             {
                 std::string filename;
-                cout << "Filename to Deploy:\n";
+                cout << "\t\t\tFilename to Deploy:\n";
                 cout << "\t\t\t >>>";
                 cin >> filename;
                 sodoku.deploy_board(filename);
@@ -95,7 +96,6 @@ void play_menu(SodokuBoard& sodoku)
         cout << "\t\t\t 2. Clear Tile" << endl;
         cout << "\t\t\t 3. Solve Sodoku" << endl;
         cout << "\t\t\t 4. Get Help" << endl;
-        //TODO
         cout << "\t\t\t 5. Check Correctness" << endl;
         cout << "\t\t\t 6. Back To Main Menu" << endl;
         cout << "\t\t\t >>> ";
@@ -148,14 +148,34 @@ void play_menu(SodokuBoard& sodoku)
                 cin >> answer;
 
                 if (answer == '1') print_possibilities(sodoku, row, col);
-                else if(answer == '2') print_possibilities(sodoku, row, col);
-                else if(answer == '3') print_possibilities(sodoku, row, col);
-                else if(answer == '4') print_possibilities(sodoku, row, col);
+                else if(answer == '2') print_possibilities(sodoku, row, col, 2);
+                else if(answer == '3') print_possibilities(sodoku, row, col, 3);
+                else if(answer == '4') print_possibilities(sodoku, row, col, 4);
+                else cout << "\n\t\t\t WRONG INPUT!\n";
                 break;
             }
             case '5':
             {
-                cout << "Check Correctness \n";
+                char answer;
+
+                cout << "\n\t\t\tWhat Check you need?\n";
+                cout << "\t\t\t1. Solvable 2. Check Tile\n";
+                cout << "\t\t\t >>> ";
+                cin >> answer;
+
+                if (answer == '1')
+                {
+                    if (sodoku.find_solution())
+                    {
+                        cout << "\n\t\t\tThere're no Errors in your Sodoku\n";
+                    }
+                    else
+                    {
+                        cout << "\n\t\t\tAttention. Your Sodoku has Errors!\n";
+                    }
+                }
+                else if(answer == '2') check_all_dimensions(sodoku);
+                else cout << "\n\t\t\t WRONG INPUT!\n";
                 break;
             }
             case '6':
@@ -202,21 +222,46 @@ void print_possibilities(SodokuBoard& board, int row , int col, int ans)
 {
     std::vector<int> options = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    if (ans == 0)
+    if (ans == 1)
     {
         board.row_remove_option(options, row);
         board.col_remove_option(options, col);
         board.box_remove_option(options, row, col);
     }
-    else if (ans == 1)
-        board.col_remove_option(options, col);
     else if (ans == 2)
-        board.row_remove_option(options, row);
+        board.col_remove_option(options, col);
     else if (ans == 3)
+        board.row_remove_option(options, row);
+    else if (ans == 4)
         board.box_remove_option(options, row, col);
 
     cout << "\n\t\t\t Your Possibilities Are < ";
     for (int pos : options)
         cout << pos << " ";
     cout << " >" << endl;
+}
+
+void check_all_dimensions(SodokuBoard& board)
+{
+    for (int row = 0; row < SIZE; row++)
+    {
+        for (int col = 0; col < SIZE; col++)
+        {
+            int valueAt = board.get_tile_value(row, col);
+            if (valueAt == 0)
+                continue;
+
+            board.set_tile_value(row, col, 0);
+            std::vector<int> options = board.get_tile_options(row, col);
+            board.set_tile_value(row, col, valueAt);
+
+            if(!(std::find(options.begin(), options.end(), valueAt) != options.end())) {
+                // does not contain x
+                cout << "\n\t\t\tThere is Error. Row: " << row+1 << " Col: " << col+1 << endl;
+                return;
+            }
+
+        }
+    }
+
 }

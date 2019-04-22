@@ -95,7 +95,7 @@ void SodokuBoard::load_board(const std::string& filename)
     }
 
     in.close();
-    std::cout << "Sodoku was successfully loaded\n";
+    std::cout << "\t\t\tSodoku was successfully loaded\n";
 }
 
 int SodokuBoard::read_value(char ch)
@@ -121,7 +121,7 @@ void SodokuBoard::deploy_board(const std::string& filename)
     }
 
     out.close();
-    std::cout << "Sodoku was successfully deployed\n";
+    std::cout << "\t\t\tSodoku was successfully deployed\n";
 }
 
 bool SodokuBoard::find_solution(int index)
